@@ -123,8 +123,15 @@
       aspect-ratio:4/3;
       object-fit:cover;
       transition:transform .3s;
+      width:100%;
     }
     .gallery img:hover{transform:scale(1.03);}
+    /* 👇 تصغير الصورة الأخيرة */
+    .gallery img:last-child{
+      width:70%;
+      margin:auto;
+      display:block;
+    }
     .contact-box{
       background:linear-gradient(135deg,var(--accent),var(--primary));
       color:white;
