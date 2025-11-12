@@ -1,229 +1,239 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HUNANIMA — Machines Agricoles Simples</title>
-  <meta name="description" content="HUNANIMA — machines agricoles simples et fiables. Récolte, fourrage et outils pour petites parcelles avec support clair et prix équitable."/>
+  <title>Sassy Pedicab Co. LLC — Eco-Friendly Pedicab Services in Las Vegas</title>
+  <meta name="description" content="Sassy Pedicab Co. LLC offers sustainable and stylish pedicab rides across Las Vegas. Contact us at contact@verdiyan.shop or call +1 865 940 9186."/>
   <style>
-    :root{
-      --primary:#1B7F3A;   /* Vert */
-      --accent:#FFD300;    /* Jaune */
-      --nav:#0E4D25;       /* Vert foncé */
-      --ink:#0b0b0b;
-      --muted:#58636f;
-      --card:#ffffff;
-      --bg:#ffffff;
+    :root {
+      --primary: #22c55e;
+      --accent: #0ea5e9;
+      --bg: #f9fafb;
+      --text: #111827;
+      --muted: #6b7280;
+      --radius: 14px;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
-
-    /* Header */
-    header{background:var(--nav); color:#fff; position:sticky; top:0; z-index:10; box-shadow:0 6px 18px rgba(0,0,0,.08)}
-    .topbar{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px}
-    .brand{font-weight:900; letter-spacing:.35px}
-    nav a{display:inline-block; padding:10px 14px; border-radius:12px; color:#eaffea; font-weight:700}
-    nav a:hover{background:rgba(255,255,255,.12)}
-    .cta-btn{background:var(--accent); color:#1a1500; padding:10px 14px; border-radius:12px; font-weight:800}
-
-    /* Hero (animated card) */
-    .hero-wrap{background:linear-gradient(180deg,#ffffff,#f2fff6); padding:42px 24px}
-    .hero-card{
-      background:var(--card); border:1px solid rgba(0,0,0,.06); border-radius:22px;
-      box-shadow:0 30px 60px rgba(0,0,0,.12); padding:28px;
-      display:grid; grid-template-columns:1.15fr .85fr; gap:22px; overflow:hidden;
-      transform:translateY(24px); opacity:0; animation:cardIn .9s ease-out .15s forwards;
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:"Poppins",system-ui,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
     }
-    @keyframes cardIn{to{transform:translateY(0);opacity:1}}
-    .hero-badge{display:inline-flex; align-items:center; gap:10px; background:#0e3a1d; color:var(--accent); padding:6px 12px; border-radius:999px; font-size:.9rem; font-weight:800}
-    .hero-title{font-size:clamp(26px,4vw,42px); line-height:1.15; margin:14px 0 10px; font-weight:900}
-    .hero-title .grad{background:linear-gradient(90deg,var(--primary),#2fc368); -webkit-background-clip:text; color:transparent}
-    .hero-sub{font-size:1.02rem; color:#2f3540}
-    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px}
-    .btn{border:2px solid #0e3a1d; color:#fff; background:#0e3a1d; padding:12px 18px; border-radius:14px; font-weight:800}
-    .btn:hover{transform:translateY(-1px); box-shadow:0 8px 16px rgba(0,0,0,.15)}
-    .btn.secondary{background:var(--accent); color:#1a1500; border-color:var(--accent)}
-    .hero-media{border-radius:18px; overflow:hidden; aspect-ratio:4/3; background:#f6fff8;
-      display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:8px}
-    .hero-media img{object-fit:cover; width:100%; height:100%}
-
-    /* Sections */
-    section{padding:56px 24px}
-    section h2{font-size:clamp(22px,3vw,32px); margin:0 0 14px; font-weight:900}
-    .muted{color:var(--muted)}
-
-    /* Cards */
-    .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px}
-    .card{border:1px solid rgba(0,0,0,.06); border-radius:16px; padding:16px; background:#fff; box-shadow:0 8px 24px rgba(0,0,0,.06);
-      transform:translateY(14px); opacity:0}
-    .card.reveal{animation:reveal .7s ease-out forwards}
-    @keyframes reveal{to{transform:translateY(0); opacity:1}}
-
-    /* Gallery */
-    .gallery{display:grid; grid-template-columns:repeat(2,1fr); gap:12px}
-    .gallery img{border-radius:14px; aspect-ratio:4/3; object-fit:cover}
-
-    /* Formula */
-    .formula{border-left:6px solid var(--accent); background:#fff9ce; padding:16px 18px; border-radius:12px}
-    .formula ol{margin:0; padding-left:18px}
-    .formula li{margin:8px 0}
-
-    /* Contact */
-    .contact-box{background:var(--primary); color:#fff; border-radius:18px; padding:20px; display:grid; gap:8px; border:1px solid rgba(0,0,0,.12)}
-    .contact-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:6px}
-    .contact-actions a{display:inline-block; background:var(--accent); color:#1a1500; padding:10px 14px; border-radius:12px; font-weight:800}
-
-    footer{background:#0e3a1d; color:var(--accent); padding:18px; text-align:center; font-weight:700}
-
-    @media (max-width:820px){
-      .hero-card{grid-template-columns:1fr; padding:20px}
-      .gallery{grid-template-columns:1fr}
+    header{
+      background:linear-gradient(90deg,var(--primary),var(--accent));
+      color:white;
+      position:sticky;top:0;z-index:50;
+      box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    }
+    .topbar{
+      max-width:1150px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:14px 24px;
+    }
+    .brand{
+      font-weight:800;
+      font-size:1.3rem;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+    nav{display:flex;gap:18px;}
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-weight:600;
+      border-radius:8px;
+      padding:8px 12px;
+      transition:.3s;
+    }
+    nav a:hover{background:rgba(255,255,255,0.2);}
+    .hero{
+      max-width:1150px;
+      margin:auto;
+      padding:70px 24px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;align-items:center;
+    }
+    .hero h1{
+      font-size:clamp(30px,5vw,46px);
+      color:var(--accent);
+      margin-bottom:12px;
+    }
+    .hero p{color:var(--muted);font-size:1.05rem;}
+    .hero img{
+      border-radius:var(--radius);
+      box-shadow:0 14px 40px rgba(0,0,0,0.3);
+      width:100%;
+      object-fit:cover;
+    }
+    .btn{
+      background:var(--primary);
+      color:white;
+      padding:12px 18px;
+      border-radius:8px;
+      font-weight:700;
+      text-decoration:none;
+      display:inline-block;
+      margin-top:18px;
+      box-shadow:0 10px 25px rgba(34,197,94,0.3);
+      transition:.3s;
+    }
+    .btn:hover{background:#16a34a;transform:translateY(-3px);}
+    section{
+      max-width:1150px;
+      margin:auto;
+      padding:60px 24px;
+    }
+    h2{
+      font-size:clamp(22px,3vw,32px);
+      color:var(--accent);
+      margin-bottom:14px;
+    }
+    .muted{color:var(--muted);}
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:16px;
+      margin-top:20px;
+    }
+    .card{
+      background:white;
+      border-radius:var(--radius);
+      border:1px solid #e5e7eb;
+      padding:18px;
+      box-shadow:0 6px 14px rgba(0,0,0,0.05);
+      transition:transform .3s;
+    }
+    .card:hover{transform:translateY(-4px);}
+    .card h3{color:var(--primary);margin-top:0;}
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:14px;
+      margin-top:20px;
+    }
+    .gallery img{
+      border-radius:var(--radius);
+      aspect-ratio:4/3;
+      object-fit:cover;
+      transition:transform .3s;
+    }
+    .gallery img:hover{transform:scale(1.03);}
+    .contact-box{
+      background:linear-gradient(135deg,var(--accent),var(--primary));
+      color:white;
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    }
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:10px;
+    }
+    .contact-actions{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .contact-actions a{
+      background:white;
+      color:var(--accent);
+      padding:10px 14px;
+      border-radius:8px;
+      font-weight:700;
+      text-decoration:none;
+      box-shadow:0 8px 24px rgba(0,0,0,0.1);
+      transition:.3s;
+    }
+    .contact-actions a:hover{transform:translateY(-3px);}
+    footer{
+      background:#111827;
+      color:#9ca3af;
+      text-align:center;
+      padding:20px;
+    }
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;text-align:center;}
+      nav{display:none;}
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="topbar container">
-      <div class="brand">HUNANIMA</div>
-      <nav>
-        <a href="#about">À propos</a>
-        <a href="#products">Produits</a>
-        <a href="#gallery">Galerie</a>
-        <a href="#formula">Notre Formule</a>
-        <a href="#contact" class="cta-btn">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header>
+  <div class="topbar">
+    <div class="brand">Sassy Pedicab Co. LLC</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <div class="hero-wrap">
-    <div class="container">
-      <div class="hero-card">
-        <div>
-          <span class="hero-badge">Machines Agricoles Simples</span>
-          <h1 class="hero-title">Travaillez malin. <span class="grad">Faites croître sûrement.</span></h1>
-          <p class="hero-sub">Équipements compacts, fiables et faciles à entretenir pour petites et moyennes exploitations — récolte, fourrage et manutention simplifiés.</p>
-          <div class="hero-actions">
-            <a class="btn" href="#products">Découvrir nos Produits</a>
-            <a class="btn secondary" href="#contact">Demander un Devis</a>
-          </div>
-          <p class="muted" style="margin-top:10px;">
-            Avenue Baratier, 95160 Montmorency • +33 7 38 50 26 36 • admin@tyusex.shop
-          </p>
-        </div>
-        <div class="hero-media">
-          <img src="https://i.pinimg.com/550x/a9/df/51/a9df5172829f8c05f5b92f97553d41ae.jpg" alt="Champ & tracteur">
-          <img src="http://ogden_images.s3.amazonaws.com/www.motherearthnews.com/images/2014/11/22234423/Boaz-Mini-Combine-jpg.jpg" alt="Mini moissonneuse">
-          <img src="https://krs-agro.ru/products/zagotovka_kormov/elho/19/7.jpg" alt="Outil de fourrage">
-          <img src="https://img.mod-network.net/files/images/6218ac69d37fb/SimpleFarmSilov1000_6222.jpg" alt="Équipement de silo">
-        </div>
-      </div>
+<section class="hero">
+  <div>
+    <h1>Eco-Friendly Rides, Las Vegas Style!</h1>
+    <p><strong>Sassy Pedicab Co. LLC</strong> provides fun, green, and efficient pedicab rides across Las Vegas. Whether you’re sightseeing, commuting, or promoting your brand, we deliver a stylish and sustainable experience.</p>
+    <a href="#contact" class="btn">Book a Ride</a>
+    <p class="muted" style="margin-top:14px;">contact@verdiyan.shop • +1 865 940 9186</p>
+    <p class="muted">N. Campbell Rd, Las Vegas, NV 89149</p>
+  </div>
+  <img src="https://www.motrike.com/wp-content/uploads/2024/03/Front-Loading-Pedicab-bike-8.jpg" alt="Pedicab vehicle">
+</section>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p class="muted"><strong>Sassy Pedicab Co. LLC</strong> is dedicated to sustainable urban transport. Founded in Las Vegas, we’re changing how people explore the city — one pedal at a time. Our team of friendly riders ensures safety, comfort, and unforgettable experiences.</p>
+  <div class="cards">
+    <div class="card"><h3>Eco Transportation</h3><p>Zero-emission rides that keep the planet happy and the streets cleaner.</p></div>
+    <div class="card"><h3>City Tours</h3><p>Discover Las Vegas landmarks up close with guided pedicab tours.</p></div>
+    <div class="card"><h3>Event Promotion</h3><p>Advertise your brand with mobile outdoor visibility on our vibrant pedicabs.</p></div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="https://www.motrike.com/wp-content/uploads/2024/03/Front-Loading-Pedicab-bike-8.jpg" alt="Pedicab bike model">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/St_Philip_Royal_Pedicab_New_Orleans.jpg" alt="Pedicab street scene">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Bicycle_Cab_-_Flickr_-_FaceMePLS.jpg" alt="Bicycle cab in city">
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact-box">
+    <div class="contact-grid">
+      <div><strong>Company:</strong> Sassy Pedicab Co. LLC</div>
+      <div><strong>Phone:</strong> +1 865 940 9186</div>
+      <div><strong>Email:</strong> contact@verdiyan.shop</div>
+      <div style="grid-column:1/-1;"><strong>Address:</strong> N. Campbell Rd, Las Vegas, NV 89149, United States</div>
+    </div>
+    <div class="contact-actions">
+      <a href="mailto:contact@verdiyan.shop">Email</a>
+      <a href="tel:+18659409186">Call</a>
+      <a href="https://wa.me/18659409186" target="_blank">WhatsApp</a>
     </div>
   </div>
+</section>
 
-  <!-- About -->
-  <section id="about" class="container">
-    <h2>À propos de nous</h2>
-    <p class="muted">
-      HUNANIMA conçoit des machines agricoles pratiques, avec des commandes simples et une maintenance facile.  
-      Notre objectif : des outils qui démarrent chaque matin et font gagner des heures aux champs.
-    </p>
-    <div class="cards" style="margin-top:12px">
-      <article class="card reveal" style="animation-delay:.00s"><strong>Fiabilité :</strong> Moins de capteurs, mécanique éprouvée, entretien simple.</article>
-      <article class="card reveal" style="animation-delay:.08s"><strong>Adaptabilité :</strong> Accessoires pour récolte, fourrage et manutention.</article>
-      <article class="card reveal" style="animation-delay:.16s"><strong>Support :</strong> Conseils pièces et entretien.</article>
-      <article class="card reveal" style="animation-delay:.24s"><strong>Valeur :</strong> Spécifications solides sans extras inutiles.</article>
-    </div>
-  </section>
+<footer>
+  © <span id="year"></span> Sassy Pedicab Co. LLC — Ride Green. Ride Sassy.
+</footer>
 
-  <!-- Products -->
-  <section id="products" class="container">
-    <h2>Produits</h2>
-    <div class="cards">
-      <article class="card reveal" style="animation-delay:.00s">
-        <h3>Mini Moissonneuse</h3>
-        <p>Récolte compacte pour petites parcelles ; transmission simple et faible consommation.</p>
-      </article>
-      <article class="card reveal" style="animation-delay:.08s">
-        <h3>Outils de Fourrage</h3>
-        <p>Accessoires de coupe et ramassage adaptés aux tracteurs de puissance moyenne.</p>
-      </article>
-      <article class="card reveal" style="animation-delay:.16s">
-        <h3>Silos & Manutention</h3>
-        <p>Chargeurs et vis de silo avec commandes simples.</p>
-      </article>
-      <article class="card reveal" style="animation-delay:.24s">
-        <h3>Kits de Service</h3>
-        <p>Filtres, courroies et fluides regroupés pour maximiser le temps de fonctionnement.</p>
-      </article>
-    </div>
-  </section>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
-  <!-- Gallery -->
-  <section id="gallery" class="container">
-    <h2>Galerie</h2>
-    <div class="gallery">
-      <img src="https://i.pinimg.com/550x/a9/df/51/a9df5172829f8c05f5b92f97553d41ae.jpg" alt="Tracteur au champ">
-      <img src="http://ogden_images.s3.amazonaws.com/www.motherearthnews.com/images/2014/11/22234423/Boaz-Mini-Combine-jpg.jpg" alt="Mini moissonneuse gros plan">
-      <img src="https://krs-agro.ru/products/zagotovka_kormov/elho/19/7.jpg" alt="Équipement de fourrage">
-      <img src="https://img.mod-network.net/files/images/6218ac69d37fb/SimpleFarmSilov1000_6222.jpg" alt="Chargeur de silo">
-    </div>
-  </section>
-
-  <!-- Notre Formule -->
-  <section id="formula" class="container">
-    <h2>Notre Formule (10 Points Clés)</h2>
-    <div class="formula">
-      <ol>
-        <li><strong>Design Simple :</strong> Commandes intuitives, pièces accessibles.</li>
-        <li><strong>Taille Adaptée :</strong> Puissance calibrée aux parcelles et tâches.</li>
-        <li><strong>Économie de Carburant :</strong> Moteurs et transmissions efficaces.</li>
-        <li><strong>Durabilité :</strong> Pièces d’usure renforcées ; pièces de rechange faciles.</li>
-        <li><strong>Sécurité :</strong> Protections, prise de force sécurisée, étiquettes claires.</li>
-        <li><strong>Maintenance :</strong> Kits de service et plannings inclus.</li>
-        <li><strong>Polyvalence :</strong> Un tracteur, plusieurs accessoires.</li>
-        <li><strong>Disponibilité :</strong> Devis rapides et délais réalistes.</li>
-        <li><strong>Formation :</strong> Initiation simple à la livraison.</li>
-        <li><strong>Suivi :</strong> Assistance téléphonique/email et conseils pièces.</li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="container">
-    <h2>Contact</h2>
-    <div class="contact-box">
-      <div><strong>Entreprise :</strong> HUNANIMA</div>
-      <div><strong>Domaine :</strong> Machines Agricoles Simples</div>
-      <div><strong>Adresse :</strong> Avenue Baratier, 95160 Montmorency, France</div>
-      <div><strong>Téléphone :</strong> +33 7 38 50 26 36</div>
-      <div><strong>Email :</strong> admin@tyusex.shop</div>
-      <div class="contact-actions">
-        <a href="mailto:admin@tyusex.shop?subject=Demande%20-%20HUNANIMA%20Machines%20Agricoles" target="_blank" rel="noopener">Envoyer un Email</a>
-        <a href="tel:+33738502636">Appeler</a>
-        <a href="https://wa.me/33738502636" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=Avenue+Baratier+95160+Montmorency" target="_blank" rel="noopener">Ouvrir la Carte</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 HUNANIMA — Tous droits réservés
-  </footer>
-
-  <script>
-    // Apparition progressive des cartes
-    const observer = new IntersectionObserver(entries=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){ e.target.classList.add('reveal'); observer.unobserve(e.target); }
-      })
-    }, {threshold:.15});
-    document.querySelectorAll('.card').forEach(el=>observer.observe(el));
-  </script>
 </body>
 </html>
